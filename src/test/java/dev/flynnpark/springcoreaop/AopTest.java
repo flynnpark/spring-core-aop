@@ -3,6 +3,7 @@ package dev.flynnpark.springcoreaop;
 import dev.flynnpark.springcoreaop.order.OrderRepository;
 import dev.flynnpark.springcoreaop.order.OrderService;
 import dev.flynnpark.springcoreaop.order.aop.AspectV3;
+import dev.flynnpark.springcoreaop.order.aop.AspectV4Pointcut;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.Import;
 
 @Slf4j
 @SpringBootTest
-@Import(AspectV3.class)
+@Import(AspectV4Pointcut.class)
 public class AopTest {
     @Autowired
     OrderService orderService;
