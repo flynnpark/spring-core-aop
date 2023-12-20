@@ -1,5 +1,6 @@
 package dev.flynnpark.springcoreaop.exam;
 
+import dev.flynnpark.springcoreaop.exam.annotation.Trace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,8 @@ import org.springframework.stereotype.Service;
 public class ExamService {
     private final ExamRepository examRepository;
 
-    public String request(String itemId) {
-        return examRepository.save(itemId);
+    @Trace
+    public void request(String itemId) {
+        examRepository.save(itemId);
     }
 }
